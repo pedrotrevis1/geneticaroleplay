@@ -2,11 +2,6 @@ import streamlit as st
 import random
 import time
 
-st.title('Descobrindo a Genética')
-
-import random
-import time
-
 grupo1 = [
 'monges alemães no século XVIII. ',
 'cientistas brasileiros do século XVIII. ', 
@@ -28,11 +23,6 @@ grupo2 = [
 'O ano é 1899, e a virada do século promete grandes novidades tecnológicas e científicas. Destinados a fazer parte destas descobertas, vocês se encontram ',
 'Destinados a estudar os povoados próximos e suas relações naturais, vocês se encontram na cidade e, numa das principais discussões vocês ficam '
 ]
-
-
-
-
-
 
 lugar = [
 'do monastério. ',
@@ -66,17 +56,75 @@ caracCoisa = [
 ]
 
 coisasSao = [
-'todas as maçãs que nasceram são vermelhas. ',
-'todos os grãos de milho que nasceram são pequeninos. ',
-'todas as ervilhas que nasceram são amarelas. ',
-'todas as moscas que nasceram possuem olhos brancos. ',
-'todas as larvas de formigas que nasceram são compridas. ',
-'todos os bolores que cresceram são brancos. ',
-'todos os coelhos que nasceram são rajados. '
+'todas as maçãs que nasceram são vermelhas! ',
+'todos os grãos de milho que nasceram são pequeninos! ',
+'todas as ervilhas que nasceram são amarelas! ',
+'todas as moscas que nasceram possuem olhos brancos! ',
+'todas as larvas de formigas que nasceram são compridas! ',
+'todos os bolores que cresceram são brancos! ',
+'todos os coelhos que nasceram são rajados! '
+]
+
+coisas=[
+'as maçãs ',
+'os grãos de milho ',
+'as ervilhas ',
+'as moscas ',
+'as larvas de formiga ',
+'os bolores ',
+'os coelhos '
+]
+
+carac=[
+'vermelhas ',
+'verdes ',
+'pequeninos ',
+'grandes e arredondados ',
+'amarelas ',
+'verdes ',
+'com olhos brancos ',
+'com olhos vermelhos ',
+'compridas ',
+'arredondadas ',
+'brancos ',
+'marrons ',
+'rajados ',
+'vermelhos '
 ]
 
 nGrupo = random.randint(0,7)
 nCoisa = random.randint(0,6)
+
+if nCoisa == 0:
+    coisasA = coisas[0]
+    carac1 = carac[0]
+    carac2 = carac[1]
+elif nCoisa == 1:
+    coisasA = coisas[1]
+    carac1 = carac[2]
+    carac2 = carac[3]
+elif nCoisa == 2:
+    coisasA = coisas[2]
+    carac1 = carac[4]
+    carac2 = carac[5]
+elif nCoisa == 3:
+    coisasA = coisas[3]
+    carac1 = carac[6]
+    carac2 = carac[7]
+elif nCoisa == 4:
+    coisasA = coisas[4]
+    carac1 = carac[8]
+    carac2 = carac[9]
+elif nCoisa == 5:
+    coisasA = coisas[5]
+    carac1 = carac[10]
+    carac2 = carac[11]
+elif nCoisa == 6:
+    coisasA = coisas[6]
+    carac1 = carac[12]
+    carac2 = carac[13]
+
+st.title('Descobrindo a Genética')
 
 st.write('Você e seu grupo são ' + grupo1[nGrupo] +'\n')
 time.sleep(4)
@@ -86,6 +134,8 @@ st.write(caracCoisa[nCoisa]+'\n')
 time.sleep(4)
 st.write('Vocês resolvem então cruzar estes seres com características diferentes. '+'\n')
 time.sleep(4)
-st.write('Primeiramente vocês selecionam linhagem completamente puras há várias gerações e ficam surpresos que, deste primeiro cruzamento, '+ coisasSao[nCoisa]+'\n')
+st.write('Primeiramente vocês selecionam linhagem completamente puras há várias gerações (ou seja, '+coisasA+'de uma linhagem são '+carac1+'há várias gerações e da outra linhagem são '+carac2+'também há várias gerações.)')
 time.sleep(4)
-st.write('Como é possível que isso aconteça, se os "pais" deste cruzamento possuem características tão diferentes?')
+st.write('Após realizarem este primeiro cruzamento, vocês percebem que '+ coisasSao[nCoisa]+'\n')
+time.sleep(4)
+st.subheader('Como é possível que isso aconteça, se os "pais" deste cruzamento possuem características tão diferentes?' +'\n'+'O que aconteceu com as características?')
